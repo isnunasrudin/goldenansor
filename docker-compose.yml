@@ -11,19 +11,19 @@ services:
       - PHP_UPLOAD_MAX_FILE_SIZE=500M
       - PHP_OPCACHE_ENABLE=1
 
-  franken:
-    build: .
-    environment:
-      SERVER_NAME: ":443"
-      CADDY_GLOBAL_OPTIONS: |
-        local_certs
-      CADDY_SERVER_EXTRA_DIRECTIVES: |
-        tls {
-          on_demand
-        }
+  # franken:
+  #   build: .
+  #   environment:
+  #     SERVER_NAME: ":443"
+  #     CADDY_GLOBAL_OPTIONS: |
+  #       local_certs
+  #     CADDY_SERVER_EXTRA_DIRECTIVES: |
+  #       tls {
+  #         on_demand
+  #       }
 
-    volumes:
-      - .:/app
+  #   volumes:
+  #     - .:/app
 
   task:
     image: serversideup/php:8.4-cli-alpine

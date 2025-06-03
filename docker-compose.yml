@@ -14,11 +14,18 @@ services:
   #     - PHP_OPCACHE_ENABLE=1
 
   franken:
-    image: dunglas/frankenphp
+    build: .
+    environment:
+      SERVER_NAME: ":443"
+      CADDY_GLOBAL_OPTIONS: |
+        local_certs
+      CADDY_SERVER_EXTRA_DIRECTIVES: |
+        tls {
+          on_demand
+        }
+
     volumes:
       - .:/app
-    ports:
-      - "8000:80"
 
   task:
     image: serversideup/php:8.4-cli-alpine
@@ -27,7 +34,7 @@ services:
     volumes:
       - .:/var/www/html
     depends_on:
-      - octane
+      - franken
 
   queue:
     image: serversideup/php:8.4-cli-alpine
@@ -36,4 +43,4 @@ services:
     volumes:
       - .:/var/www/html
     depends_on:
-      - octane
+      - franken

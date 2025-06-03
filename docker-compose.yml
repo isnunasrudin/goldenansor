@@ -3,7 +3,7 @@ services:
     image: serversideup/php:8.4-cli-alpine
     command: >
       sh -c "php /var/www/html/artisan octane:install --server=frankenphp -n &&
-      php /var/www/html/artisan octane:start --server=frankenphp -n"
+      php /var/www/html/artisan octane:start --server=frankenphp -n --host=0.0.0.0 --https"
     volumes:
       - .:/var/www/html
     environment:
@@ -32,7 +32,7 @@ services:
     volumes:
       - .:/var/www/html
     depends_on:
-      - franken
+      - octane
 
   queue:
     image: serversideup/php:8.4-cli-alpine
@@ -41,4 +41,4 @@ services:
     volumes:
       - .:/var/www/html
     depends_on:
-      - franken
+      - octane

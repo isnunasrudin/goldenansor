@@ -1,0 +1,26 @@
+{
+  "node_modules/.pnpm/@fortawesome+fontawesome-free@6.7.2/node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-D1LuMI3I.ttf",
+    "src": "node_modules/.pnpm/@fortawesome+fontawesome-free@6.7.2/node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf"
+  },
+  "node_modules/.pnpm/@fortawesome+fontawesome-free@6.7.2/node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-D_cYUPeE.woff2",
+    "src": "node_modules/.pnpm/@fortawesome+fontawesome-free@6.7.2/node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-JsFPTVxl.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/umum.css": {
+    "file": "assets/umum-BVsIDhhs.css",
+    "src": "resources/css/umum.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-T1DpEqax.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}

@@ -38,4 +38,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(SessionPicture::class, 'user_id', 'id');
     }
+
+    public function canAccessPanel()
+    {
+        return true;
+    }
 }

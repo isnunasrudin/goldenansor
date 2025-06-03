@@ -10,6 +10,7 @@ services:
       - PHP_POST_MAX_SIZE=500M
       - PHP_UPLOAD_MAX_FILE_SIZE=500M
       - PHP_OPCACHE_ENABLE=1
+      - AUTORUN_ENABLED=1
 
   # franken:
   #   build: .

@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import "@fortawesome/fontawesome-free/css/fontawesome.min.css";
+@import "@fortawesome/fontawesome-free/css/brands.min.css";
+        
+body {
+    font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+.fire-effect {
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 47, 37, 0.8) 0%,
+        rgba(0, 10, 8, 0.716) 70%,
+        #00000094 100%
+    );
+}
+
+h1.animate-float {
+    background: linear-gradient(to right, #3b82f6, #10b981);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-text {
+    font-size: 1.1rem; /* 17.6px */
+    line-height: 1.6;
+}
+
+.quick-action {
+    @apply p-3 md:p-4 rounded-lg flex items-center gap-3 transition-colors;
+    min-height: 50px;
+  }
+  
+  .quick-action i {
+    @apply text-emerald-400;
+  }
+  
+  .quick-action span {
+    @apply text-emerald-100 text-sm md:text-base;
+  }
+
+.timeline-item {
+    transition: opacity 0.5s ease;
+}

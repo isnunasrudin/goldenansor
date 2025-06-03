@@ -1,17 +1,15 @@
 services:
-  # octane:
-  #   image: serversideup/php:8.4-cli-alpine
-  #   command: >
-  #     sh -c "php /var/www/html/artisan octane:install --server=frankenphp -n &&
-  #     php /var/www/html/artisan octane:start --server=frankenphp -n"
-  #   volumes:
-  #     - .:/var/www/html
-  #   ports:
-  #     - "8000:8000"
-  #   environment:
-  #     - PHP_POST_MAX_SIZE=500M
-  #     - PHP_UPLOAD_MAX_FILE_SIZE=500M
-  #     - PHP_OPCACHE_ENABLE=1
+  octane:
+    image: serversideup/php:8.4-cli-alpine
+    command: >
+      sh -c "php /var/www/html/artisan octane:install --server=frankenphp -n &&
+      php /var/www/html/artisan octane:start --server=frankenphp -n"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - PHP_POST_MAX_SIZE=500M
+      - PHP_UPLOAD_MAX_FILE_SIZE=500M
+      - PHP_OPCACHE_ENABLE=1
 
   franken:
     build: .
@@ -29,7 +27,7 @@ services:
 
   task:
     image: serversideup/php:8.4-cli-alpine
-    command: ["php", "/var/www/html/artisan", "schedule:work"]
+    # command: ["php", "/var/www/html/artisan", "schedule:work"]
     stop_signal: SIGTERM
     volumes:
       - .:/var/www/html
@@ -38,7 +36,7 @@ services:
 
   queue:
     image: serversideup/php:8.4-cli-alpine
-    command: ["php", "/var/www/html/artisan", "queue:work", "--tries=3"]
+    # command: ["php", "/var/www/html/artisan", "queue:work", "--tries=3"]
     stop_signal: SIGTERM
     volumes:
       - .:/var/www/html

@@ -7,10 +7,20 @@ services:
     volumes:
       - .:/var/www/html
     environment:
+      - AUTORUN_ENABLED=1
       - PHP_POST_MAX_SIZE=500M
       - PHP_UPLOAD_MAX_FILE_SIZE=500M
       - PHP_OPCACHE_ENABLE=1
-      - AUTORUN_ENABLED=1
+
+  postgres:
+    image: postgres:15
+    restart: always
+    volumes:
+      - ./database/postgres:/var/lib/postgres/data
+    environment:
+      - POSTGRES_DB=${DB_DATABASE}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
 
   # franken:
   #   build: .
